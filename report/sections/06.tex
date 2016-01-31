@@ -1,0 +1,24 @@
+\section{Question 6}
+
+The open-loop transfer function is equal to the product of the transfer function
+of the controller $F(s)$ and that of the process $G(s)$. The crossover frequency
+$\omega_c$ is the frequency at which the magnitute of $F(j\omega)G(j\omega)$ is
+$1.0$.
+
+In practice, we were able to derive the crossover frequency by using MATLAB's
+\texttt{margin()} function, with argument the open-loop transfer function.
+
+Table \ref{tbl:Q6} illustrates the crossover frequencies in rad/s for set values
+of the $\chi$, $\zeta$ and $\omega_0$ parameters.
+
+\begin{table}[H]\centering
+  \begin{tabular}{ccc|c}
+  $\chi$  & $\zeta$  & $\omega_0$  & $\omega_c$   \\ \hline
+  $0.5$   & $0.7$    & $0.1$       & $0.2239$     \\ \hline
+  $0.5$   & $0.7$    & $0.2$       & $0.3426$     \\ \hline
+  $0.5$   & $0.8$    & $0.2$       & $0.3619$     \\ \hline
+  \end{tabular}
+  \caption{Crossover frequencies depending on the set values of $\chi$, $\zeta$
+    and $\omega_0$.}
+  \label{tbl:Q6}
+\end{table}

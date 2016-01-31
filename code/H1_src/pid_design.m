@@ -42,6 +42,9 @@ omega0 = 0.1;
 % Transfer function for the controller
 F = tf([K*Ti*(1+Td*N), K*(1+Ti*N), K*N], [Ti, Ti*N, 0]); 
 
+% Derive the crossover frequency
+[Gm,Pm,Wgm,Wpm] = margin(F*G)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
