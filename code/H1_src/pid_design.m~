@@ -9,38 +9,25 @@
 clear  
 init_tanks;
 g = 9.82;
-Tau_ = 1/alpha1*sqrt(2*tank_h10/g);
-K_ = 60*beta*Tau_;
-Gamma_ = alpha1^2/alpha2^2;
+Tau = 1/alpha1*sqrt(2*tank_h10/g);
+K = 60*beta*Tau;
+Gamma = alpha1^2/alpha2^2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Continuous Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-uppertank=tf([K_],[Tau_, 1]); % Transfer function for upper tank
-lowertank=tf([Gamma_],[Gamma_*Tau_, 1]); % Transfer function for upper tank
+uppertank=tf([K],[Tau, 1]); % Transfer function for upper tank
+lowertank=tf([Gamma],[Gamma*Tau, 1]); % Transfer function for upper tank
 G=uppertank*lowertank; % Transfer function from input to lower tank level
 
-% CalculatePID parameters
-
-% Case 1
+% CalculatePID paramaeters
 chi = 0.5;
 zeta = 0.7;
 omega0 = 0.1;
+[K_pid, Ti, Td, N] = polePlacePID(chi, omega0, zeta, Tau, Gamma, K);
 
-% Case 2
-% chi = 0.5;
-% zeta = 0.7;
-% omega0 = 0.2;
 
-% Case 3
-% chi = 0.5;
-% zeta = 0.8;
-% omega0 = 0.2;
-
-[K, Ti, Td, N] = polePlacePID(chi, omega0, zeta, Tau_, Gamma_, K_);
-
-% Transfer function for the controller
-F = tf([K*Ti*(1+Td*N), K*(1+Ti*N), K*N], [Ti, Ti*N, 0]); 
+F = tf([K_pid*Ti*(1+Td*N), K_pid*(1+Ti*N), K_pid*N], [Ti,]); % Transfer function for the controller
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design

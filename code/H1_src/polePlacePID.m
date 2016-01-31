@@ -1,6 +1,6 @@
 % Computes PID parameters, given some information on where the
 % closed-loop poles of the system should be.
-function [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta,tau,gamma,k)
+function [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta, tau, gamma, k)
 
 chi = -1*chi;
 K = -(1+2*gamma+4*chi*tau*gamma+gamma^2+2*chi^2*zeta*omega0*tau^3*gamma^2-2*chi*omega0^2*tau^3*gamma^2-4*zeta*omega0*tau*gamma+4*chi*tau*gamma^2+4*chi^2*tau^2*gamma^2-4*zeta*omega0*tau*gamma^2+4*zeta^2*omega0^2*tau^2*gamma^2-2*chi*omega0^2*tau^3*gamma^3-3*gamma^3*tau^4*chi^2*omega0^2-8*chi*tau^2*gamma^2*zeta*omega0+2*chi^2*zeta*omega0*tau^3*gamma^3+4*chi^3*zeta*omega0*tau^4*gamma^3-4*chi^2*zeta^2*omega0^2*tau^4*gamma^3+4*chi*omega0^3*tau^4*gamma^3*zeta)/(k*gamma*(-4*zeta*omega0*tau*gamma+4*chi*tau*gamma^2+2*gamma+4*chi*tau*gamma-4*zeta*omega0*tau*gamma^2+4*zeta^2*omega0^2*tau^2*gamma^2+4*chi^2*tau^2*gamma^2-8*chi*tau^2*gamma^2*zeta*omega0+gamma^2+1))
