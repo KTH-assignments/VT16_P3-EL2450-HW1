@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [47.0, 26.0, 784.0, 718.0]
+      Location		      [29.0, 0.0, 1337.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[740.0, 552.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Extents			[1301.0, 581.0]
+	ZoomFactor		[1.25]
+	Offset			[-71.716666666667663, -11.966666666666622]
       }
     }
   }
@@ -66,7 +66,7 @@ Model {
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Mon Feb 01 18:17:34 2016"
-  RTWModifiedTimeStamp	  376251451
+  RTWModifiedTimeStamp	  376255007
   ModelVersionFormat	  "1.%<AutoIncrement:91>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -1256,7 +1256,7 @@ Model {
 	  $ObjectID		  30
 	  Version		  "1.14.3"
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "2000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -2052,7 +2052,7 @@ Model {
   }
   System {
     Name		    "tanks"
-    Location		    [47, 26, 831, 744]
+    Location		    [29, 0, 1366, 744]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2064,7 +2064,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "55"
     Block {
@@ -2907,6 +2907,7 @@ Model {
       SID		      "55"
       Position		      [295, 130, 330, 160]
       ZOrder		      8
+      SampleTime	      "8"
     }
     Line {
       ZOrder		      1

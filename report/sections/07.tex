@@ -1,11 +1,38 @@
 \section{Question 7}
 
+Figure \ref{fig:Q7.rloc_F_G} shows the root locus of the open-loop transfer
+function without the use of a zero-order hold, while figure
+\ref{fig:Q7.rloc_F_ZOH_G} shows exacly the same, but with the addition of a
+zero-order hold between the controller and the process, with sampling time of
+$h=1$ sec. It is apparent that without the zero-order hold, the system is stable,
+since all poles have negative real values. However, the time delay and the pole
+at zero that the zero-order hold introduces deliver a reduction in the degree of
+stability.
+
+\begin{figure}[H]\centering
+	\centering
+	\scalebox{1}{\input{./images/7/root_locus_F_G.tex}}
+  \caption{Root locus of the open-loop system without the use of a zero-order hold.}
+  \label{fig:Q7.rloc_F_G}
+\end{figure}
+
+\begin{figure}[H]\centering
+	\centering
+	\scalebox{1}{\input{./images/7/root_locus_F_ZOH_G.tex}}
+  \caption{Root locus of the open-loop system with the use of a zero-order hold.}
+  \label{fig:Q7.rloc_F_ZOH_G}
+\end{figure}
+
 Figures \ref{fig:Q7.1}-\ref{fig:Q7.8} illustrate the step response when between
 the continuous controller and the plant a zero-order hold has been inserted, for
 sampling time varying between $1$ and $8$ seconds. The values of the $\chi$,
 $\zeta$ and $\omega_0$ parameters were chosen to be the ones giving the best
 performance among the three sets,
 hence $(\chi, \zeta, \omega_0) \equiv (0.5, 0.8, 0.2)$.
+
+Here, up until $h = 5$ sec, as the sampling time increases, so do the rise
+time, settling time and overshoot. However, increasing $h$ beyond $7$ sec
+make the system critically stable.
 
 \begin{figure}[H]\centering
 	\centering

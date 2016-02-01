@@ -45,16 +45,15 @@ F_denom = [Ti, Ti*N, 0];
 F = tf(F_nom, F_denom); 
 
 % Transfer function of the zero-order hold
-zoh_h = 8;
+zoh
 s= tf('s');
-ZOH = (1-exp(-s*zoh_h))/(s*zoh_h);
-ZOH_pade = pade(ZOH, 2);
+ZOH = -exp(-s*);
 
 % Derive the crossover frequency
-[Gm, Pm, Wgm, Wpm] = margin(F*G);
+[Gm, Pm, Wgm, Wpm] = margin(F*G)
 
 % Find the bandwidth of the open-loop transfer function
-w0 = bandwidth(F*G/(1+F*G));
+w0 = bandwidth(F*G/(1+F*G))
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
