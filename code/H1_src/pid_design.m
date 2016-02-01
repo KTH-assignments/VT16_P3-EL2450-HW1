@@ -45,7 +45,7 @@ F_denom = [Ti, Ti*N, 0];
 F = tf(F_nom, F_denom); 
 
 % Transfer function of the zero-order hold
-zoh_h = 8;
+zoh_h = 1;
 s= tf('s');
 ZOH = (1-exp(-s*zoh_h))/(s*zoh_h);
 ZOH_pade = pade(ZOH, 2);
@@ -59,7 +59,7 @@ w0 = bandwidth(F*G/(1+F*G));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 1; % Sampling time
+Ts = 8; % Sampling time
 
 % Discretize the continous controller, save it in state space form
 % To do this, we first derive the state space representation of the 

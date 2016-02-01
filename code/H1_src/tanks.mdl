@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.91"
+    ComputedModelVersion    "1.98"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [47.0, 26.0, 784.0, 718.0]
+      Location		      [29.0, 0.0, 1337.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[740.0, 552.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Extents			[1301.0, 581.0]
+	ZoomFactor		[1.25]
+	Offset			[-71.716666666667663, -11.966666666666622]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 01 18:17:34 2016"
-  RTWModifiedTimeStamp	  376251451
-  ModelVersionFormat	  "1.%<AutoIncrement:91>"
+  LastModifiedDate	  "Mon Feb 01 19:45:53 2016"
+  RTWModifiedTimeStamp	  376256748
+  ModelVersionFormat	  "1.%<AutoIncrement:98>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1865,6 +1865,18 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      DiscreteStateSpace
+      A			      "1"
+      B			      "1"
+      C			      "1"
+      D			      "1"
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+      Realization	      "auto"
+    }
+    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -2037,22 +2049,10 @@ Model {
       NumInputs		      "1"
       SampleTime	      "0"
     }
-    Block {
-      BlockType		      TransferFcn
-      Numerator		      "[1]"
-      Denominator	      "[1 2 1]"
-      AbsoluteTolerance	      "auto"
-      ContinuousStateAttributes	"''"
-      Realization	      "auto"
-    }
-    Block {
-      BlockType		      ZeroOrderHold
-      SampleTime	      "1"
-    }
   }
   System {
     Name		    "tanks"
-    Location		    [47, 26, 831, 744]
+    Location		    [29, 0, 1366, 744]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2064,18 +2064,21 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "55"
+    SIDHighWatermark	    "57"
     Block {
-      BlockType		      TransferFcn
-      Name		      "Continous controller"
-      SID		      "54"
-      Position		      [195, 125, 255, 165]
-      ZOrder		      7
+      BlockType		      DiscreteStateSpace
+      Name		      "Discretisized controller"
+      SID		      "57"
+      Position		      [195, 125, 275, 165]
+      ZOrder		      10
       NamePlacement	      "alternate"
-      Numerator		      "F.num{1}"
-      Denominator	      "F.den{1}"
+      A			      "Aa"
+      B			      "Ba"
+      C			      "Ca"
+      D			      "Da"
+      SampleTime	      "Ts"
     }
     Block {
       BlockType		      SubSystem
@@ -2218,7 +2221,7 @@ Model {
       ZOrder		      -4
       Floating		      off
       Location		      [1367, 51, 3287, 1078]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2901,13 +2904,6 @@ Model {
 	}
       }
     }
-    Block {
-      BlockType		      ZeroOrderHold
-      Name		      "Zero-Order\nHold"
-      SID		      "55"
-      Position		      [295, 130, 330, 160]
-      ZOrder		      8
-    }
     Line {
       ZOrder		      1
       SrcBlock		      "Two tanks"
@@ -2961,22 +2957,15 @@ Model {
       }
     }
     Line {
-      ZOrder		      28
+      ZOrder		      37
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Continous controller"
+      DstBlock		      "Discretisized controller"
       DstPort		      1
     }
     Line {
-      ZOrder		      30
-      SrcBlock		      "Continous controller"
-      SrcPort		      1
-      DstBlock		      "Zero-Order\nHold"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      29
-      SrcBlock		      "Zero-Order\nHold"
+      ZOrder		      38
+      SrcBlock		      "Discretisized controller"
       SrcPort		      1
       DstBlock		      "Two tanks"
       DstPort		      1

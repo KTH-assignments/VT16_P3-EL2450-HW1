@@ -1,5 +1,5 @@
 Model {
-  Name			  "tanks"
+  Name			  "tanks_2"
   Version		  8.4
   MdlSubVersion		  0
   SavedCharacterEncoding  "UTF-8"
@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.91"
+    ComputedModelVersion    "1.111"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1301.0, 581.0]
+	Extents			[1293.0, 578.0]
 	ZoomFactor		[1.25]
-	Offset			[-71.716666666667663, -11.966666666666622]
+	Offset			[-71.716666666667663, -11.966666666666612]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 01 18:17:34 2016"
-  RTWModifiedTimeStamp	  376255007
-  ModelVersionFormat	  "1.%<AutoIncrement:91>"
+  LastModifiedDate	  "Mon Feb 01 20:04:00 2016"
+  RTWModifiedTimeStamp	  376257840
+  ModelVersionFormat	  "1.%<AutoIncrement:111>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,11 +110,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "tanks"
+    model_		    "tanks_2"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "tanks"
+      Cell		      "tanks_2"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1256,7 +1256,7 @@ Model {
 	  $ObjectID		  30
 	  Version		  "1.14.3"
 	  StartTime		  "0.0"
-	  StopTime		  "2000"
+	  StopTime		  "200"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -2051,7 +2051,7 @@ Model {
     }
   }
   System {
-    Name		    "tanks"
+    Name		    "tanks_2"
     Location		    [29, 0, 1366, 744]
     Open		    on
     ModelBrowserVisibility  off
@@ -2066,7 +2066,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "55"
+    SIDHighWatermark	    "56"
     Block {
       BlockType		      TransferFcn
       Name		      "Continous controller"
@@ -2218,7 +2218,7 @@ Model {
       ZOrder		      -4
       Floating		      off
       Location		      [1367, 51, 3287, 1078]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2251,7 +2251,7 @@ Model {
       Ports		      [1]
       Position		      [460, 315, 520, 345]
       ZOrder		      3
-      VariableName	      "tank_2_level"
+      VariableName	      "tank_2_level_2"
       MaxDataPoints	      "inf"
       SaveFormat	      "Timeseries"
       Save2DSignal	      "3-D array (concatenate along third dimension)"
@@ -2582,7 +2582,7 @@ Model {
 	    Annotation {
 	      SID		      "29"
 	      Name		      "dV/dt"
-	      Position		      [257, 76, 282, 91]
+	      Position		      [257, 76, 283, 91]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2592,7 +2592,7 @@ Model {
 	    Annotation {
 	      SID		      "30"
 	      Name		      "Flow out"
-	      Position		      [197, 126, 236, 141]
+	      Position		      [197, 126, 237, 141]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2768,7 +2768,7 @@ Model {
 	    Annotation {
 	      SID		      "41"
 	      Name		      "Flow out"
-	      Position		      [142, 121, 181, 136]
+	      Position		      [142, 121, 182, 136]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2778,7 +2778,7 @@ Model {
 	    Annotation {
 	      SID		      "42"
 	      Name		      "dV/dt"
-	      Position		      [212, 66, 237, 81]
+	      Position		      [212, 66, 238, 81]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
