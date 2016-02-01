@@ -47,10 +47,13 @@ F = tf(F_nom, F_denom);
 % Derive the crossover frequency
 [Gm, Pm, Wgm, Wpm] = margin(F*G)
 
+% Find the bandwidth of the open-loop transfer function
+w0 = bandwidth(F*G/(1+F*G))
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 8; % Sampling time
+Ts = 1; % Sampling time
 
 % Discretize the continous controller, save it in state space form
 % To do this, we first derive the state space representation of the 
