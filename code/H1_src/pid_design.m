@@ -59,7 +59,7 @@ w0 = bandwidth(F*G/(1+F*G));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 8; % Sampling time
+Ts = 0.5; % Sampling time
 
 % Discretize the continous controller, save it in state space form
 % To do this, we first derive the state space representation of the 

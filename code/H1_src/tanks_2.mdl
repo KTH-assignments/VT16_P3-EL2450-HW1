@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.111"
+    ComputedModelVersion    "1.113"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 01 20:04:00 2016"
-  RTWModifiedTimeStamp	  376257840
-  ModelVersionFormat	  "1.%<AutoIncrement:111>"
+  LastModifiedDate	  "Mon Feb 01 21:49:17 2016"
+  RTWModifiedTimeStamp	  376264155
+  ModelVersionFormat	  "1.%<AutoIncrement:113>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2217,7 +2217,7 @@ Model {
       Position		      [535, 144, 565, 176]
       ZOrder		      -4
       Floating		      off
-      Location		      [1367, 51, 3287, 1078]
+      Location		      [34, 51, 1363, 739]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -2907,7 +2907,6 @@ Model {
       SID		      "55"
       Position		      [295, 130, 330, 160]
       ZOrder		      8
-      SampleTime	      "8"
     }
     Line {
       ZOrder		      1
@@ -2969,6 +2968,10 @@ Model {
       DstPort		      1
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      30
       SrcBlock		      "Continous controller"
       SrcPort		      1

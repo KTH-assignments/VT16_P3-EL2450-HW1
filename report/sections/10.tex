@@ -1,0 +1,30 @@
+\section{Question 10}
+
+The highest sampling rate that results in the step response satisfying the
+control requirements was found to be $T_s = 0.5$ sec. This value lies within
+all intervals proposed by the empirical rules considered in the previous question.
+
+The difference in performance can be accounted for by the discretization of the
+PID parameters, since they are approximated.
+
+Figure \ref{fig:Q10.response} illustrates the step response for $T_s = 0.5$ and
+table \ref{tbl:Q10.requirements} shows the resulting control performance.
+
+\begin{figure}[H]\centering
+	\centering
+	\scalebox{1}{\input{./images/10/05.tex}}
+  \caption{Step response of the system using a discrete PID controller with a
+    sampling time of $T_s=0.5$ sec.}
+  \label{fig:Q10.response}
+\end{figure}
+
+\begin{table}[H]\centering
+    \begin{tabular}{l|l}
+    Rise time         & $5.15$ \\ \hline
+    Overshoot(\%)     & $27.0$ \\ \hline
+    Settling time     & $29.2$ \\ \hline
+    \end{tabular}
+    \caption{The rise time, overshoot and settling time of the step response
+      featured in figure \ref{fig:Q10.response}.}
+    \label{tbl:Q10.requirements}
+\end{table}
