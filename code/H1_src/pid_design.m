@@ -39,10 +39,17 @@ omega0 = 0.2;
 
 [K, Ti, Td, N] = polePlacePID(chi, omega0, zeta, Tau_, Gamma_, K_);
 
-% Transfer function for the controller
+% Transfer function of the controller
 F_nom = [K*Ti*(1+Td*N), K*(1+Ti*N), K*N];
 F_denom = [Ti, Ti*N, 0];
 F = tf(F_nom, F_denom); 
+
+% Open-loop transfer function
+OL = F * G;
+
+% Closed-loop transfer function
+CL = OL / (1 + OL);
+
 
 % Transfer function of the zero-order hold
 zoh_h = 1;
@@ -50,16 +57,16 @@ s= tf('s');
 ZOH = (1-exp(-s*zoh_h))/(s*zoh_h);
 ZOH_pade = pade(ZOH, 2);
 
-% Derive the crossover frequency
-[Gm, Pm, Wgm, Wpm] = margin(F*G);
+% Derive the crossover frequency of the open loop
+[Gm, Pm, Wgm, Wpm] = margin(OL);
 
-% Find the bandwidth of the open-loop transfer function
-w0 = bandwidth(F*G/(1+F*G));
+% Find the bandwidth of the closed-loop transfer function
+w0 = bandwidth(CL);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Digital Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ts = 0.5; % Sampling time
+Ts = 4; % Sampling time
 
 % Discretize the continous controller, save it in state space form
 % To do this, we first derive the state space representation of the 
@@ -67,15 +74,15 @@ Ts = 0.5; % Sampling time
 % so as to obtain the state representation of the discrete controller.
 [A, B, C, D] = tf2ss(F_nom, F_denom); 
 F_ss = ss(A, B, C, D);
-Fd = c2d(F_ss, Ts, 'zoh');
-Aa = Fd.a;
-Ba = Fd.b;
-Ca = Fd.c;
-Da = Fd.d;
+F_ssd = c2d(F_ss, Ts, 'zoh');
+Aa = F_ssd.a;
+Ba = F_ssd.b;
+Ca = F_ssd.c;
+Da = F_ssd.d;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discrete Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Gd = 1; % Sampled system model
-%Fd = 1; % Transfer function for discrete designed controller
+% Sampled system model
+Gd = c2d(G, Ts, 'zoh'); 
+Fd = 1; % Transfer function for discrete designed controller

@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.98"
+    ComputedModelVersion    "1.99"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1301.0, 581.0]
+	Extents			[1293.0, 578.0]
 	ZoomFactor		[1.25]
-	Offset			[-71.716666666667663, -11.966666666666622]
+	Offset			[-71.716666666667663, -11.966666666666612]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 01 19:45:53 2016"
-  RTWModifiedTimeStamp	  376256748
-  ModelVersionFormat	  "1.%<AutoIncrement:98>"
+  LastModifiedDate	  "Mon Feb 01 23:35:31 2016"
+  RTWModifiedTimeStamp	  376270528
+  ModelVersionFormat	  "1.%<AutoIncrement:99>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1256,7 +1256,7 @@ Model {
 	  $ObjectID		  30
 	  Version		  "1.14.3"
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "2000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -2585,7 +2585,7 @@ Model {
 	    Annotation {
 	      SID		      "29"
 	      Name		      "dV/dt"
-	      Position		      [257, 76, 282, 91]
+	      Position		      [257, 76, 283, 91]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2595,7 +2595,7 @@ Model {
 	    Annotation {
 	      SID		      "30"
 	      Name		      "Flow out"
-	      Position		      [197, 126, 236, 141]
+	      Position		      [197, 126, 237, 141]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2771,7 +2771,7 @@ Model {
 	    Annotation {
 	      SID		      "41"
 	      Name		      "Flow out"
-	      Position		      [142, 121, 181, 136]
+	      Position		      [142, 121, 182, 136]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2781,7 +2781,7 @@ Model {
 	    Annotation {
 	      SID		      "42"
 	      Name		      "dV/dt"
-	      Position		      [212, 66, 237, 81]
+	      Position		      [212, 66, 238, 81]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
