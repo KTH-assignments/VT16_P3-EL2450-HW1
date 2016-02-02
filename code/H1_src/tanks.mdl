@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.99"
+    ComputedModelVersion    "1.100"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [29.0, 0.0, 1337.0, 744.0]
+      Location		      [33.0, 22.0, 1337.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 01 23:35:31 2016"
-  RTWModifiedTimeStamp	  376270528
-  ModelVersionFormat	  "1.%<AutoIncrement:99>"
+  LastModifiedDate	  "Tue Feb 02 21:39:06 2016"
+  RTWModifiedTimeStamp	  376349930
+  ModelVersionFormat	  "1.%<AutoIncrement:100>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1256,7 +1256,7 @@ Model {
 	  $ObjectID		  30
 	  Version		  "1.14.3"
 	  StartTime		  "0.0"
-	  StopTime		  "2000"
+	  StopTime		  "200"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -1865,16 +1865,39 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      DiscreteStateSpace
-      A			      "1"
-      B			      "1"
-      C			      "1"
-      D			      "1"
-      X0		      "0"
-      SampleTime	      "1"
+      BlockType		      DiscreteTransferFcn
+      NumeratorSource	      "Dialog"
+      Numerator		      "[1]"
+      DenominatorSource	      "Dialog"
+      Denominator	      "[1 0.5]"
+      InitialStatesSource     "Dialog"
+      InitialStates	      "0"
+      InputProcessing	      "Elements as channels (sample based)"
+      ExternalReset	      "None"
+      InitialDenominatorStates "0"
+      FilterStructure	      "Direct form II"
+      SampleTime	      "-1"
+      a0EqualsOne	      off
+      NumCoefMin	      "[]"
+      NumCoefMax	      "[]"
+      DenCoefMin	      "[]"
+      DenCoefMax	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      StateDataTypeStr	      "Inherit: Same as input"
+      MultiplicandDataTypeStr "Inherit: Same as input"
+      NumCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      DenCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      NumProductDataTypeStr   "Inherit: Inherit via internal rule"
+      DenProductDataTypeStr   "Inherit: Inherit via internal rule"
+      NumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      DenAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
       StateMustResolveToSignalObject off
       RTWStateStorageClass    "Auto"
-      Realization	      "auto"
     }
     Block {
       BlockType		      Fcn
@@ -2052,7 +2075,7 @@ Model {
   }
   System {
     Name		    "tanks"
-    Location		    [29, 0, 1366, 744]
+    Location		    [33, 22, 1370, 766]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2066,18 +2089,18 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "57"
+    SIDHighWatermark	    "58"
     Block {
-      BlockType		      DiscreteStateSpace
-      Name		      "Discretisized controller"
-      SID		      "57"
-      Position		      [195, 125, 275, 165]
-      ZOrder		      10
+      BlockType		      DiscreteTransferFcn
+      Name		      "Discrete designed\ncontroller"
+      SID		      "58"
+      Ports		      [1, 1]
+      Position		      [195, 125, 255, 165]
+      ZOrder		      11
       NamePlacement	      "alternate"
-      A			      "Aa"
-      B			      "Ba"
-      C			      "Ca"
-      D			      "Da"
+      InputPortMap	      "u0"
+      Numerator		      "Fd.num{1}"
+      Denominator	      "Fd.den{1}"
       SampleTime	      "Ts"
     }
     Block {
@@ -2585,7 +2608,7 @@ Model {
 	    Annotation {
 	      SID		      "29"
 	      Name		      "dV/dt"
-	      Position		      [257, 76, 283, 91]
+	      Position		      [257, 76, 282, 91]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2595,7 +2618,7 @@ Model {
 	    Annotation {
 	      SID		      "30"
 	      Name		      "Flow out"
-	      Position		      [197, 126, 237, 141]
+	      Position		      [197, 126, 236, 141]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2771,7 +2794,7 @@ Model {
 	    Annotation {
 	      SID		      "41"
 	      Name		      "Flow out"
-	      Position		      [142, 121, 182, 136]
+	      Position		      [142, 121, 181, 136]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2781,7 +2804,7 @@ Model {
 	    Annotation {
 	      SID		      "42"
 	      Name		      "dV/dt"
-	      Position		      [212, 66, 238, 81]
+	      Position		      [212, 66, 237, 81]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -2957,15 +2980,15 @@ Model {
       }
     }
     Line {
-      ZOrder		      37
+      ZOrder		      39
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Discretisized controller"
+      DstBlock		      "Discrete designed\ncontroller"
       DstPort		      1
     }
     Line {
-      ZOrder		      38
-      SrcBlock		      "Discretisized controller"
+      ZOrder		      40
+      SrcBlock		      "Discrete designed\ncontroller"
       SrcPort		      1
       DstBlock		      "Two tanks"
       DstPort		      1

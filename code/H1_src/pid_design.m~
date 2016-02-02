@@ -87,7 +87,7 @@ Da = F_ssd.d;
 Gd = c2d(G, Ts, 'zoh'); 
 
 % Transfer function for discrete designed controller
-Fd = tf([8.618335246742943 -10.368502260730628 3.297509579680140], [1 (0.454306152327853-1) -0.454306152327853], Ts);
+Fd = tf([8.618335246742943 -10.3688 3.2976], [1 -0.5457 -0.4543], Ts);
 
 OLd = Fd * Gd;
 CLd = OLd / (1 + OLd);
