@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.114"
+    ComputedModelVersion    "1.115"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 02 21:56:41 2016"
-  RTWModifiedTimeStamp	  376350998
-  ModelVersionFormat	  "1.%<AutoIncrement:114>"
+  LastModifiedDate	  "Wed Feb 03 18:50:51 2016"
+  RTWModifiedTimeStamp	  376426247
+  ModelVersionFormat	  "1.%<AutoIncrement:115>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1865,18 +1865,6 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      DiscreteStateSpace
-      A			      "1"
-      B			      "1"
-      C			      "1"
-      D			      "1"
-      X0		      "0"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-      Realization	      "auto"
-    }
-    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -2049,6 +2037,14 @@ Model {
       NumInputs		      "1"
       SampleTime	      "0"
     }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
   }
   System {
     Name		    "tanks_2"
@@ -2066,19 +2062,16 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "57"
+    SIDHighWatermark	    "58"
     Block {
-      BlockType		      DiscreteStateSpace
-      Name		      "Discretisized controller"
-      SID		      "57"
-      Position		      [195, 125, 275, 165]
-      ZOrder		      9
+      BlockType		      TransferFcn
+      Name		      "Continous controller"
+      SID		      "58"
+      Position		      [195, 125, 255, 165]
+      ZOrder		      10
       NamePlacement	      "alternate"
-      A			      "Aa"
-      B			      "Ba"
-      C			      "Ca"
-      D			      "Da"
-      SampleTime	      "Ts"
+      Numerator		      "F.num{1}"
+      Denominator	      "F.den{1}"
     }
     Block {
       BlockType		      SubSystem
@@ -2957,15 +2950,15 @@ Model {
       }
     }
     Line {
-      ZOrder		      32
+      ZOrder		      34
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Discretisized controller"
+      DstBlock		      "Continous controller"
       DstPort		      1
     }
     Line {
-      ZOrder		      33
-      SrcBlock		      "Discretisized controller"
+      ZOrder		      35
+      SrcBlock		      "Continous controller"
       SrcPort		      1
       DstBlock		      "Two tanks"
       DstPort		      1

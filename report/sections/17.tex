@@ -4,6 +4,12 @@ Figure \ref{fig:Q17.response} illustrates the step responses for the discrete
 system and the system with a discretized controller and a continuous process
 for a sampling time of $T_s = 4$ sec.
 
+The performance of the discrete controller - discrete plant is far better than
+that of the discretized controller - continuous plant. This is due to the fact
+that the designed controller is not a PID controller and that it is designed in
+a way such that the discrete closed-loop system has exactly the same poles as
+the continuous closed-loop system.
+
 \begin{figure}[H]\centering
 	\centering
 	\scalebox{1}{\input{./images/17/17.tex}}

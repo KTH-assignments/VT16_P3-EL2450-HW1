@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.100"
+    ComputedModelVersion    "1.106"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [33.0, 22.0, 1337.0, 744.0]
+      Location		      [29.0, 0.0, 1337.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 02 21:39:06 2016"
-  RTWModifiedTimeStamp	  376349930
-  ModelVersionFormat	  "1.%<AutoIncrement:100>"
+  LastModifiedDate	  "Wed Feb 03 21:30:24 2016"
+  RTWModifiedTimeStamp	  376435816
+  ModelVersionFormat	  "1.%<AutoIncrement:106>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1256,7 +1256,7 @@ Model {
 	  $ObjectID		  30
 	  Version		  "1.14.3"
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "500"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -1970,6 +1970,12 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      Quantizer
+      QuantizationInterval    "0.5"
+      LinearizeAsGain	      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Saturate
       UpperLimitSource	      "Dialog"
       UpperLimit	      "0.5"
@@ -2075,7 +2081,7 @@ Model {
   }
   System {
     Name		    "tanks"
-    Location		    [33, 22, 1370, 766]
+    Location		    [29, 0, 1366, 744]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -2089,19 +2095,35 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "58"
+    SIDHighWatermark	    "64"
     Block {
       BlockType		      DiscreteTransferFcn
       Name		      "Discrete designed\ncontroller"
       SID		      "58"
       Ports		      [1, 1]
-      Position		      [195, 125, 255, 165]
+      Position		      [310, 125, 370, 165]
       ZOrder		      11
       NamePlacement	      "alternate"
       InputPortMap	      "u0"
       Numerator		      "Fd.num{1}"
       Denominator	      "Fd.den{1}"
       SampleTime	      "Ts"
+    }
+    Block {
+      BlockType		      Quantizer
+      Name		      "Quantizer"
+      SID		      "59"
+      Position		      [175, 130, 205, 160]
+      ZOrder		      12
+      QuantizationInterval    "q"
+    }
+    Block {
+      BlockType		      Quantizer
+      Name		      "Quantizer1"
+      SID		      "63"
+      Position		      [420, 130, 450, 160]
+      ZOrder		      16
+      QuantizationInterval    "q"
     }
     Block {
       BlockType		      SubSystem
@@ -2190,6 +2212,28 @@ Model {
       }
     }
     Block {
+      BlockType		      Saturate
+      Name		      "Saturation"
+      SID		      "60"
+      Ports		      [1, 1]
+      Position		      [230, 130, 260, 160]
+      ZOrder		      13
+      InputPortMap	      "u0"
+      UpperLimit	      "100"
+      LowerLimit	      "-100"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation1"
+      SID		      "64"
+      Ports		      [1, 1]
+      Position		      [480, 130, 510, 160]
+      ZOrder		      17
+      InputPortMap	      "u0"
+      UpperLimit	      "100"
+      LowerLimit	      "-100"
+    }
+    Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "6"
@@ -2207,7 +2251,7 @@ Model {
       Name		      "Tank1 level"
       SID		      "7"
       Ports		      [1]
-      Position		      [535, 94, 565, 126]
+      Position		      [700, 94, 730, 126]
       ZOrder		      -3
       Floating		      off
       Location		      [35, 54, 1362, 738]
@@ -2240,10 +2284,10 @@ Model {
       Name		      "Tank2 level"
       SID		      "8"
       Ports		      [1]
-      Position		      [535, 144, 565, 176]
+      Position		      [700, 144, 730, 176]
       ZOrder		      -4
       Floating		      off
-      Location		      [1367, 51, 3287, 1078]
+      Location		      [34, 51, 1363, 739]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -2275,7 +2319,7 @@ Model {
       Name		      "To Workspace"
       SID		      "50"
       Ports		      [1]
-      Position		      [460, 315, 520, 345]
+      Position		      [625, 315, 685, 345]
       ZOrder		      3
       VariableName	      "tank_2_level"
       MaxDataPoints	      "inf"
@@ -2303,7 +2347,7 @@ Model {
       Name		      "Two tanks"
       SID		      "9"
       Ports		      [1, 2]
-      Position		      [395, 115, 485, 175]
+      Position		      [560, 115, 650, 175]
       ZOrder		      -5
       RequestExecContextInheritance off
       System {
@@ -2956,7 +3000,7 @@ Model {
 	}
 	Branch {
 	  ZOrder		  16
-	  Points		  [-317, 0]
+	  Points		  [-482, 0]
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
@@ -2980,17 +3024,45 @@ Model {
       }
     }
     Line {
-      ZOrder		      39
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Discrete designed\ncontroller"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      40
       SrcBlock		      "Discrete designed\ncontroller"
       SrcPort		      1
+      DstBlock		      "Quantizer1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      44
+      SrcBlock		      "Quantizer1"
+      SrcPort		      1
+      DstBlock		      "Saturation1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      46
+      SrcBlock		      "Saturation1"
+      SrcPort		      1
       DstBlock		      "Two tanks"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      47
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Quantizer"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      48
+      SrcBlock		      "Quantizer"
+      SrcPort		      1
+      DstBlock		      "Saturation"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      49
+      SrcBlock		      "Saturation"
+      SrcPort		      1
+      DstBlock		      "Discrete designed\ncontroller"
       DstPort		      1
     }
   }

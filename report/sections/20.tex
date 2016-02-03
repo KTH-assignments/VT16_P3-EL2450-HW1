@@ -1,0 +1,26 @@
+\section{Question 20}
+
+Figure \ref{fig:20.6b} shows the step response of the system, with a quantization
+interval of $q=\frac{100}{2^6}$. It is apparent that the steady state output
+oscillates, with the steady state output bias error being more than $1\%$ of
+the desired steady state value. However, if a quantization interval of
+$\frac{100}{2^7}$ is used (fig. \ref{fig:20.7b}), then the output is still
+oscillating but within $1\%$ of the steady state output value.
+
+Furthermore, due to the fact that we consider values inside the interval
+$[-100, 100]$, at least $7+1 = 8$ bits will be needed to quantize the system and
+not be heavily degraded.
+
+\begin{figure}[H]\centering
+	\centering
+	\scalebox{0.8}{\input{./images/20/6bits.tex}}
+  \caption{}
+  \label{fig:20.6b}
+\end{figure}
+
+\begin{figure}[H]\centering
+	\centering
+	\scalebox{0.8}{\input{./images/20/7bits.tex}}
+  \caption{}
+  \label{fig:20.7b}
+\end{figure}

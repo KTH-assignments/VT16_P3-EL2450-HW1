@@ -57,6 +57,7 @@ s= tf('s');
 ZOH = (1-exp(-s*zoh_h))/(s*zoh_h);
 ZOH_pade = pade(ZOH, 2);
 
+
 % Derive the crossover frequency of the open loop
 [Gm, Pm, Wgm, Wpm] = margin(OL);
 
@@ -80,6 +81,7 @@ Ba = F_ssd.b;
 Ca = F_ssd.c;
 Da = F_ssd.d;
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discrete Control design
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,3 +93,6 @@ Fd = tf([8.618335246742943 -10.368502260730628 3.297509579680140], [1 (0.4543061
 
 OLd = Fd * Gd;
 CLd = OLd / (1 + OLd);
+
+% Quantization interval
+q = 100/2^6;
