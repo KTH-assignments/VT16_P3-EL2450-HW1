@@ -14,3 +14,41 @@ gives
     equation \ref{eq:15}.}
   \label{tbl:16}
 \end{table}
+
+hence
+
+\begin{equation}
+  F_d(z) = \dfrac{8.6181z^2 -10.3688z + 3.2976}{(z-1)(z+0.4543)}
+\end{equation}
+
+The desired and actual poles of the discrete closed-loop tranfer function are
+featured in tables \ref{tbl:16.1} and \ref{tbl:16.2} respectively. What we found
+is that, while the two complex poles reside where they should, the double pole
+at $z=0.1353$ cannot be set, and is represented by two distinct poles at either
+side of it, at a distance of approximately $e^{-T_s}$.
+
+\begin{table}
+\centering
+\makebox[0pt][c]{\parbox{\textwidth}{%
+  \begin{minipage}[b]{0.45\hsize}\centering
+    \begin{tabular}{c|c}
+      $p^d_{0,1}$ & $0.1353$             \\
+      $p^d_2$     & $0.4677 + 0.2435 i$  \\
+      $p^d_3$     & $0.4677 - 0.2435 i$  \\
+    \end{tabular}
+    \caption{The desired poles of the closed-loop transfer function.}
+    \label{tbl:16.1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\hsize}\centering
+    \begin{tabular}{c|c}
+      $p_0$ & $0.1528$            \\
+      $p_1$ & $0.1197$            \\
+      $p_3$ & $0.4667 + 0.2430 i$ \\
+      $p_4$ & $0.4667 - 0.2430 i$ \\
+    \end{tabular}
+    \caption{The actual poles of the closed-loop transfer function.}
+    \label{tbl:16.2}
+  \end{minipage}
+}}
+\end{table}

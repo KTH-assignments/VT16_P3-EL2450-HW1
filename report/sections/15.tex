@@ -3,7 +3,7 @@
 The transfer function of the discrete time closed-loop system is
 
 \begin{align*}
-  H_{cl} &= \dfrac{F(z)\cdot G(z)}{1 + F(z)\cdot G(z)} \\
+  H_{cl}(z) &= \dfrac{F(z)\cdot G(z)}{1 + F(z)\cdot G(z)} \\
          &= \dfrac{\dfrac{(c_0z^2 + c_1z +c_2)(a_1z + a_2)}{(z-1)(z+r)(z^2 + b_1z + b_2)}}
             {1 + \dfrac{(c_0z^2 + c_1z +c_2)(a_1z + a_2)}{(z-1)(z+r)(z^2 + b_1z + b_2)}} \\
          &= \dfrac{\dfrac{(c_0z^2 + c_1z +c_2)(a_1z + a_2)}{(z-1)(z+r)(z^2 + b_1z + b_2)}}
@@ -11,13 +11,15 @@ The transfer function of the discrete time closed-loop system is
          &= \dfrac{(c_0z^2 + c_1z +c_2)(a_1z + a_2)}{(z-1)(z+r)(z^2 + b_1z + b_2) + (c_0z^2 + c_1z +c_2)(a_1z + a_2)}\\
 \end{align*}
 
-The pole polynomial P(z) is defined as
+The pole polynomial $P_d(z)$ is defined as
 
 \begin{align*}
-  P(z) = z^4 + d_0z^3 + d_1z^2 + d_2z + d_3
+  P_d(z) = z^4 + d_0z^3 + d_1z^2 + d_2z + d_3
 \end{align*}
 
-The denominator of $H_{cl}(z)$ and $P(z)$ should be equal:
+and is equal to that of equation \ref{eq:14}.
+
+The denominator of $H_{cl}(z)$ and $P_d(z)$ should be equal:
 
 \begin{equation*}
   (z-1)(z+r)(z^2 + b_1z + b_2) + (c_0z^2 + c_1z +c_2)(a_1z + a_2) = z^4 + d_0z^3 + d_1z^2 + d_2z + d_3
