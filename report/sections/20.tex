@@ -12,16 +12,25 @@ $[-100, 100]$, at least $7+1 = 8$ bits will be needed to quantize the system and
 not be heavily degraded. If the steady state output bias error is desired to be
 less than $1\%$, then, more than $7$ bits should be used.
 
-\begin{figure}[H]\centering
-	\centering
-	\scalebox{0.8}{\input{./images/20/6bits.tex}}
-  \caption{}
-  \label{fig:20.6b}
-\end{figure}
 
-\begin{figure}[H]\centering
-	\centering
-	\scalebox{0.8}{\input{./images/20/7bits.tex}}
-  \caption{}
-  \label{fig:20.7b}
-\end{figure}
+\noindent\makebox[\textwidth][c]{%
+\begin{minipage}{\linewidth}\centering
+  \begin{minipage}{0.45\linewidth}
+    \begin{figure}[H]\centering
+      \centering
+      \scalebox{0.7}{\input{./images/20/6bits.tex}}
+      \caption{}
+      \label{fig:20.6b}
+    \end{figure}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\linewidth}
+    \begin{figure}[H]\centering
+      \centering
+      \scalebox{0.7}{\input{./images/20/7bits.tex}}
+      \caption{}
+      \label{fig:20.7b}
+    \end{figure}
+  \end{minipage}
+\end{minipage}
+}
