@@ -23,9 +23,8 @@ hence
 
 The desired and actual poles of the discrete closed-loop tranfer function are
 featured in tables \ref{tbl:16.1} and \ref{tbl:16.2} respectively. What we found
-is that, while the two complex poles reside where they should, the double pole
-at $z=0.1353$ cannot be set, and is represented by two distinct poles at either
-side of it, at a distance of approximately $e^{-T_s}$.
+is that due to frequency warping the actual poles of the discrere closed-loop
+transfer function are not precisely aligned with the desired ones.
 
 \begin{table}
 \centering
@@ -42,10 +41,10 @@ side of it, at a distance of approximately $e^{-T_s}$.
   \hfill
   \begin{minipage}[b]{0.45\hsize}\centering
     \begin{tabular}{c|c}
-      $p_0$ & $0.1528$            \\
-      $p_1$ & $0.1197$            \\
-      $p_3$ & $0.4667 + 0.2430 i$ \\
-      $p_4$ & $0.4667 - 0.2430 i$ \\
+      $p_0$ & $0.1518$            \\
+      $p_1$ & $0.1207$            \\
+      $p_3$ & $0.4667 + 0.2428 i$ \\
+      $p_4$ & $0.4667 - 0.2428 i$ \\
     \end{tabular}
     \caption{The actual poles of the closed-loop transfer function.}
     \label{tbl:16.2}

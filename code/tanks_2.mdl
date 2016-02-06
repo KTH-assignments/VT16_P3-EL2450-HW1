@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.115"
+    ComputedModelVersion    "1.116"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "li9i"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 03 18:50:51 2016"
-  RTWModifiedTimeStamp	  376426247
-  ModelVersionFormat	  "1.%<AutoIncrement:115>"
+  LastModifiedDate	  "Thu Feb 04 23:02:30 2016"
+  RTWModifiedTimeStamp	  376527748
+  ModelVersionFormat	  "1.%<AutoIncrement:116>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1865,6 +1865,41 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      DiscreteTransferFcn
+      NumeratorSource	      "Dialog"
+      Numerator		      "[1]"
+      DenominatorSource	      "Dialog"
+      Denominator	      "[1 0.5]"
+      InitialStatesSource     "Dialog"
+      InitialStates	      "0"
+      InputProcessing	      "Elements as channels (sample based)"
+      ExternalReset	      "None"
+      InitialDenominatorStates "0"
+      FilterStructure	      "Direct form II"
+      SampleTime	      "-1"
+      a0EqualsOne	      off
+      NumCoefMin	      "[]"
+      NumCoefMax	      "[]"
+      DenCoefMin	      "[]"
+      DenCoefMax	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      StateDataTypeStr	      "Inherit: Same as input"
+      MultiplicandDataTypeStr "Inherit: Same as input"
+      NumCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      DenCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      NumProductDataTypeStr   "Inherit: Inherit via internal rule"
+      DenProductDataTypeStr   "Inherit: Inherit via internal rule"
+      NumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      DenAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -2037,14 +2072,6 @@ Model {
       NumInputs		      "1"
       SampleTime	      "0"
     }
-    Block {
-      BlockType		      TransferFcn
-      Numerator		      "[1]"
-      Denominator	      "[1 2 1]"
-      AbsoluteTolerance	      "auto"
-      ContinuousStateAttributes	"''"
-      Realization	      "auto"
-    }
   }
   System {
     Name		    "tanks_2"
@@ -2062,16 +2089,19 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "58"
+    SIDHighWatermark	    "59"
     Block {
-      BlockType		      TransferFcn
-      Name		      "Continous controller"
-      SID		      "58"
+      BlockType		      DiscreteTransferFcn
+      Name		      "Discrete designed\ncontroller"
+      SID		      "59"
+      Ports		      [1, 1]
       Position		      [195, 125, 255, 165]
-      ZOrder		      10
+      ZOrder		      11
       NamePlacement	      "alternate"
-      Numerator		      "F.num{1}"
-      Denominator	      "F.den{1}"
+      InputPortMap	      "u0"
+      Numerator		      "Fd.num{1}"
+      Denominator	      "Fd.den{1}"
+      SampleTime	      "Ts"
     }
     Block {
       BlockType		      SubSystem
@@ -2950,15 +2980,15 @@ Model {
       }
     }
     Line {
-      ZOrder		      34
+      ZOrder		      37
       SrcBlock		      "Sum"
       SrcPort		      1
-      DstBlock		      "Continous controller"
+      DstBlock		      "Discrete designed\ncontroller"
       DstPort		      1
     }
     Line {
-      ZOrder		      35
-      SrcBlock		      "Continous controller"
+      ZOrder		      36
+      SrcBlock		      "Discrete designed\ncontroller"
       SrcPort		      1
       DstBlock		      "Two tanks"
       DstPort		      1

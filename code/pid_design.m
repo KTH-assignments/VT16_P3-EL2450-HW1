@@ -88,8 +88,32 @@ Da = F_ssd.d;
 % Sampled system model
 Gd = c2d(G, Ts, 'zoh'); 
 
+a1 = 0.09162;
+a2 = 0.07393;
+b1 = -1.45;
+b2 = 0.5254;
+d0 = -1.2061;
+d1 = 0.5495;
+d2 = -0.0924;
+d3 = 0.0051;
+
+syms r c0 c1 c2
+eqn1 = r + a1*c0 == d0 -b1 + 1;
+eqn2 = (b1-1)*r + a2*c0 + a1*c1 == d1 - b2 + b1;
+eqn3 = (b2-b1)*r + a2*c1 + a1*c2 == d2 + b2;
+eqn4= -b2*r + a2*c2 == d3;
+[A,B] = equationsToMatrix([eqn1, eqn2, eqn3, eqn4], [r c0 c1 c2]);
+X = linsolve(A,B);
+
+r = double(X(1));
+c0 = double(X(2));
+c1 = double(X(3));
+c2 = double(X(4));
+
+
 % Transfer function for discrete designed controller
-Fd = tf([8.618335246742943 -10.368502260730628 3.297509579680140], [1 (0.454306152327853-1) -0.454306152327853], Ts);
+Fd = tf([c0 c1 c2], [1 (r-1) -r], Ts);
+
 
 OLd = Fd * Gd;
 CLd = OLd / (1 + OLd);
